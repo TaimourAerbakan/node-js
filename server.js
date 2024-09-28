@@ -2,7 +2,6 @@ require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const productRoute = require("./routes/productRoute");
-const userRoute = require("./routes/userRoute");
 const app = express();
 
 const port = process.env.PORT || 3000;
@@ -14,7 +13,6 @@ app.use(express.urlencoded({ extended: false }));
 //routes
 
 app.use("/api/products", productRoute);
-app.use("/api/users", userRoute);
 app.get("/", (req, res) => {
   res.send("Hello Node API");
 });
