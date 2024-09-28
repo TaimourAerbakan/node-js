@@ -51,7 +51,7 @@ const updateProduct = async (req, res) => {
 const deleteProduct = async (req, res) => {
   try {
     const { id } = req.params;
-    const product = await Product.findByIdAndDelete(id, req.body);
+    const product = await Product.findByIdAndDelete(id);
     if (!product) {
       return res
         .status(404)
@@ -69,5 +69,5 @@ module.exports = {
   getProduct,
   createProduct,
   updateProduct,
-  deleteProduct
+  deleteProduct,
 };
